@@ -85,7 +85,7 @@ void SerialPort::sendMessage() {
         qDebug() << "Ошибка долбаеба: открой Serial Port";
         return;
     }
-    QString string = messageLine_->text();
+    QString string = messageLine_->text().append('\n');
     QByteArray data(string.toUtf8());
     serialPort_->write(data);
     qDebug() << serialPort_->portName() << "Отправлено сообщение по Serial Port:" << string;
