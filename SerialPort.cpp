@@ -6,7 +6,7 @@ SerialPort::SerialPort(QWidget *parent) : QWidget(parent) {
     initUI();
     portNamesList_ = getPortNames();
     portNamesBox_->addItems(portNamesList_);
-    this->setWindowTitle("SENDER");
+    this->setWindowTitle("Serial Port Test");
     connect(openPortButton_, &QPushButton::clicked, this, &SerialPort::openPort);
     connect(sendMessageButton_, &QPushButton::clicked, this, &SerialPort::sendMessage);
     connect(receiveMessageButton_, &QPushButton::clicked, this, &SerialPort::receiveInfo);
